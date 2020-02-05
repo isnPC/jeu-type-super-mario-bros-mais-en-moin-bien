@@ -2,14 +2,14 @@ import pygame
 pygame.init()
 
 pygame.display.set_caption("projet terminal")
-screen = pygame.display.set_mode((800,400))
+screen = pygame.display.set_mode((800,1200))
 
-background = pygame.image.load('projet term/castle.png')
+background = pygame.image.load('projet term/background.png')
 
 running = True
 while running:
 
-    screen.blit(background,(0, 0))
+    screen.blit(background,(0,0 ))
     pygame.display.flip()
 
     for event in pygame.event.get():
