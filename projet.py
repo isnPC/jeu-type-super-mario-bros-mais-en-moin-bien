@@ -9,7 +9,7 @@ class player(pygame.sprite.Sprite):
         self.max_health = 100
         self.attack = 15
         self.velocity = 5
-        self.image = pygame.image.load('projet term/hero detouré2.png')
+        self.image = pygame.image.load('projet term/hero.png')
         self.rect = self.image.get_rect()
 
 pygame.display.set_caption("projet terminal")
