@@ -1,6 +1,11 @@
 import pygame
 pygame.init()
 
+class Game :
+    def __init__(self):
+        self.player = player()
+
+
 class player(pygame.sprite.Sprite):
 
     def __init__(self):
@@ -14,11 +19,22 @@ class player(pygame.sprite.Sprite):
         self.rect.x = 100
         self.rect.y = 558
 
+    def move_right(self):
+        self.rect.x += self.velocity
+    def move_left(self):
+        self.rect.x -= self.velocity
+    def move_space(self):
+        self.rect.y += self.velocity
+
+
+
 pygame.display.set_caption("projet terminal")
 
 screen = pygame.display.set_mode((400,600))
 
 background = pygame.image.load('projet term/backgroundpluspetit.png')
+
+game = Game()
 
 player = player()
 
@@ -27,7 +43,7 @@ while running:
 
     screen.blit(background,(-10,-198 ))
 
-    screen.blit(player.image,player.rect)
+    screen.blit(game.player.image,game.player.rect)
 
     pygame.display.flip()
 
@@ -35,3 +51,12 @@ while running:
         if event.type == pygame.QUIT:
             running = False
             pygame.quit()
+
+        elif event.type == pygame.KEYDOWN:
+            if event.key == pygame.K_RIGHT:
+                game.player.move_right()
+            elif event.key == pygame.K_LEFT:
+                game.player.move_left()
+            elif event.key == pygame.K_SPACE:
+                game.player.move_saut()
+
