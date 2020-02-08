@@ -11,8 +11,11 @@ class player(pygame.sprite.Sprite):
         self.velocity = 5
         self.image = pygame.image.load('projet term/hero.png')
         self.rect = self.image.get_rect()
+        self.rect.x = 100
+        self.rect.y = 558
 
 pygame.display.set_caption("projet terminal")
+
 screen = pygame.display.set_mode((400,600))
 
 background = pygame.image.load('projet term/backgroundpluspetit.png')
