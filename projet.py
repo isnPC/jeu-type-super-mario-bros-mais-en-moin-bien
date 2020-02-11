@@ -14,7 +14,8 @@ class player(pygame.sprite.Sprite):
         self.health = 100
         self.max_health = 100
         self.attack = 15
-        self.velocity = 5
+        self.velocity = 10
+        self.hauteurdesaut = 25
         self.image = pygame.image.load('projet term/hero.png')
         self.rect = self.image.get_rect()
         self.rect.x = 100
@@ -24,9 +25,11 @@ class player(pygame.sprite.Sprite):
         self.rect.x += self.velocity
     def move_left(self):
         self.rect.x -= self.velocity
-    def move_space(self):
-        self.rect.y += self.velocity
-        self.rect.y -= self.velocity
+    def move_saut(self):
+        if self.rect.y == 558:
+            self.rect.y -= self.hauteurdesaut
+        else:
+            self.rect.y += self.hauteurdesaut
 
 
 
