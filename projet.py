@@ -4,6 +4,7 @@ pygame.init()
 class Game :
     def __init__(self):
         self.player = player()
+        self.pressed = {}
 
 
 class player(pygame.sprite.Sprite):
@@ -25,6 +26,7 @@ class player(pygame.sprite.Sprite):
         self.rect.x -= self.velocity
     def move_space(self):
         self.rect.y += self.velocity
+        self.rect.y -= self.velocity
 
 
 
