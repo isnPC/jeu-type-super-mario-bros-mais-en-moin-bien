@@ -1,7 +1,7 @@
 import pygame
 pygame.init()
 
-class Game :
+class Game() :
     def __init__(self):
         self.player = player()
         self.pressed = {}
@@ -26,11 +26,10 @@ class player(pygame.sprite.Sprite):
     def move_left(self):
         self.rect.x -= self.velocity
     def move_saut(self):
-        if self.rect.y == 558:
-            self.rect.y -= self.hauteurdesaut
-        else:
-            self.rect.y += self.hauteurdesaut
-
+        self.rect.y += self.hauteurdesaut
+        pygame.time.delay(400)
+        self.rect.y -= self.hauteurdesaut
+        pygame.display.update()
 
 
 pygame.display.set_caption("projet terminal")
